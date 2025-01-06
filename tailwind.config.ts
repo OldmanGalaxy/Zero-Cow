@@ -9,8 +9,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        cream: "#FBF6E9",
+        ygreen: "E3F0AF",
+        lgreen: "#5DB996",
+        dgreen: "#5DB996",
+      },
+      fontFamily: {
+        lilita: ["Lilita One", "sans-serif"],
+        lovelace: ["Lovelace Text", "sans-serif"],
       },
     },
   },
