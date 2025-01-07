@@ -10,7 +10,7 @@ export default {
     extend: {
       colors: {
         cream: "#FBF6E9",
-        ygreen: "E3F0AF",
+        ygreen: "#E3F0AF",
         lgreen: "#5DB996",
         dgreen: "#118B50",
       },

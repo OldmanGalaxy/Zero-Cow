@@ -16,3 +16,7 @@
     font-family: 'Lovelace Text';
     src: url('/fonts/LovelaceText.ttf');
 }
+
+body {
+    background-color: #E3F0AF;
+}
