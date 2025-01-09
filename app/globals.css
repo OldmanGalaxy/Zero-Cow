@@ -5,6 +5,7 @@
 * {
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 @font-face {
@@ -15,4 +16,8 @@
 @font-face {
     font-family: 'Lovelace Text';
     src: url('/fonts/LovelaceText.ttf');
+}
+
+body {
+    background-color: #E3F0AF;
 }
