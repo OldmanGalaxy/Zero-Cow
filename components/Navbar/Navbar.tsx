@@ -18,11 +18,11 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-dgreen border-b font-lilita">
+    <nav className="fixed top-0 left-0 right-0 bg-dgreen font-lilita z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
           {/* Logo Section */}
-          <div className="flex-shrink-0 flex items-center">
+          <div className="flex-shrink-0">
             <Link href="/">
               <img className="h-10 w-auto" src="/images/logo.png" alt="Logo" />
             </Link>
@@ -45,7 +45,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden outline-none focus:outline-none">
+          <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-cream hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500 transition-colors duration-200"
