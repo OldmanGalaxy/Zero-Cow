@@ -1,5 +1,4 @@
-"use client";
-
+"use client"
 import React, { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
@@ -18,7 +17,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-dgreen border-b font-lilita">
+    <nav className="bg-dgreen border-b font-lilita sticky">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
           {/* Logo Section */}
@@ -38,8 +37,10 @@ const Navbar = () => {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-cream hover:text-ygreen px-3 py-2 rounded-md font-medium text-2xl transition-colors duration-200 ${
-                  pathname === link.href ? "bg-ygreen text-dgreen hover:text-lgreen" : ""
+                className={`px-3 py-2 rounded-md font-medium text-2xl transition-colors duration-200 ${
+                  pathname === link.href 
+                    ? "bg-ygreen text-dgreen hover:text-dgreen" 
+                    : "text-cream hover:text-ygreen"
                 }`}
               >
                 {link.label}

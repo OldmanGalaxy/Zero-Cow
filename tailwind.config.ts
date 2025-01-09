@@ -1,3 +1,4 @@
+import { lookup } from "dns";
 import type { Config } from "tailwindcss";
 
 export default {
@@ -17,6 +18,15 @@ export default {
       fontFamily: {
         lilita: ["Lilita One", "sans-serif"],
         lovelace: ["Lovelace Text", "sans-serif"],
+      },
+      animation: {
+        "loop-scroll": "loop-scroll 15s linear infinite"
+      },
+      keyframes: {
+        'loop-scroll': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' }
+        },
       },
     },
   },
