@@ -24,11 +24,7 @@ const Navbar = () => {
           {/* Logo Section */}
           <div className="flex-shrink-0 flex items-center">
             <Link href="/">
-              <img
-                className="h-10 w-auto"
-                src="/images/logo.png"
-                alt="Logo"
-              />
+              <img className="h-10 w-auto" src="/images/logo.png" alt="Logo" />
             </Link>
           </div>
 
@@ -38,23 +34,23 @@ const Navbar = () => {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-cream hover:text-ygreen px-3 py-2 rounded-md font-medium text-2xl transition-colors duration-200 ${
-                  pathname === link.href ? "bg-ygreen text-dgreen hover:text-lgreen" : ""
-                }`}
-              >
+                className={`text-ygreen hover:text-lgreen hover:bg-ygreen px-3 py-2 rounded-md font-medium text-2xl transition-colors duration-200 ${
+                  pathname === link.href
+                    ? "bg-lgreen text-dgreen hover:text-lgreen"
+                    : ""
+                }`}>
                 {link.label}
               </Link>
             ))}
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="md:hidden outline-none focus:outline-none">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-cream hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500 transition-colors duration-200"
               aria-expanded={isOpen}
-              aria-label="Toggle menu"
-            >
+              aria-label="Toggle menu">
               {isOpen ? (
                 <X className="h-6 w-6" />
               ) : (
@@ -75,8 +71,7 @@ const Navbar = () => {
                 href={link.href}
                 className={`block px-3 py-2 rounded-md text-base font-medium text-cream hover:text-gray-900 hover:bg-gray-100 transition-colors duration-200 ${
                   pathname === link.href ? "bg-lgreen text-white" : ""
-                }`}
-              >
+                }`}>
                 {link.label}
               </Link>
             ))}
