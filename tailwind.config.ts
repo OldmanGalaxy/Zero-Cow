@@ -18,6 +18,22 @@ export default {
         lilita: ["Lilita One", "sans-serif"],
         lovelace: ["Lovelace Text", "sans-serif"],
       },
+      animation: {
+        'fadeIn': 'fadeIn 1s ease-in forwards',
+        'pulse': 'pulse 2s infinite',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        }
+      },
+      rotate: {
+        'y-12': '12deg',
+      },
+      perspective: {
+        '1000': '1000px',
+      },
     },
   },
   plugins: [],
