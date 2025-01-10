@@ -12,7 +12,7 @@ function Accomplishments() {
         <div 
         className="absolute bg-ygreen inset-0 bg-cover bg-center"  
         style={{
-          backgroundImage: "url('/images/milk2.png')",
+          backgroundImage: "url('/images/milk2_full.png')",
           zIndex: -1,
         }}
       ></div>
