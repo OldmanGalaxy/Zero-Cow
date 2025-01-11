@@ -53,8 +53,8 @@ const ImpactComponent = () => {
         ))}
       </div>
       <div className='bg-ygreen relative flex w-full overflow-hidden'>
-        {/* <img src="images/footer_milk.png" className='h-[500px]' alt="" />
-        <img src="images/footer_milk.png" className='h-[500px] absolute bottom-[30px] left-[49.92%]' alt="" /> */}
+        <img src="images/footer_milk.png" className=' w-full' alt="" />
+        {/* <img src="images/footer_milk.png" className='h-[500px] absolute bottom-[30px] left-[49.92%]' alt="" /> */}
       </div>
     </div>
   );
