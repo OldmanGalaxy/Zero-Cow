@@ -10,7 +10,7 @@ function page() {
         <div
           className="absolute bg-ygreen inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/images/milk1.png')",
+            backgroundImage: "url('/images/milk1_full.png')",
             zIndex: -1,
           }}
         ></div>
