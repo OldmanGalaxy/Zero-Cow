@@ -5,17 +5,26 @@ import Section2 from "@/components/OurTeam/Section2";
 
 function page() {
   return (
-    <div className="min-h-screen relative">
+    <div className="min-h-screen relative bg-dgreen">
       <Navbar />
-      <div 
-        className="min-h-[calc(100vh-4rem)] relative"
+      <div
+        className="min-h-screen relative"
         style={{
-          backgroundImage: 'linear-gradient(to bottom, #118B50, #E3F0AF, #5DB996)',
-          backgroundSize: '100% calc(100% + 4rem)',
-          backgroundPosition: '0 -4rem',
-          backgroundRepeat: 'no-repeat'
-        }}
-      >
+          background: "transparent",
+          backgroundImage:
+            "linear-gradient(to bottom, #118B50, #E3F0AF, #5DB996)",
+          backgroundSize: "100% 100%",
+          backgroundPosition: "0 0",
+          backgroundRepeat: "no-repeat",
+          marginTop: "5rem",
+        }}>
+        <div className="absolute inset-0">
+          <img
+            src="/images/milk1_full.png"
+            className="h-full w-full object-contain"
+            alt="Milk background"
+          />
+        </div>
         <Section1 />
         <Section2 />
       </div>
