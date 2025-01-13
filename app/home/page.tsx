@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar/Navbar";
 import Info2 from "@/components/Info2/Info2";
 import Info1 from "@/components/Info1/Info1";
 import Info3 from "@/components/Info3/Info3";
+import Footer from "@/components/Footer/Footer";
 
 const Home = () => {
   const infoSectionRef = useRef(null);
@@ -55,6 +56,7 @@ const Home = () => {
       <Info1 />
       <Info3 />
       <Info2 />
+      <Footer />
     </>
   );
 };
