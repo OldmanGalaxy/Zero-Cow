@@ -1,108 +1,73 @@
 "use client";
-import MilkFlow from "@/components/faq/MilkFlow";
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
-
-const MilkBubble = ({
-  delay,
-  duration,
-  size,
-  left,
-  top,
-}: {
-  delay: number;
-  duration: number;
-  size: number;
-  left: number;
-  top: number;
-}) => (
-  <motion.div
-    className="absolute rounded-full bg-cream backdrop-blur-sm"
-    style={{
-      width: size,
-      height: size,
-      left: `${left}%`,
-      top: `${top}%`,
-    }}
-    animate={{
-      y: [-20, 20, -20],
-      x: [-10, 10, -10],
-      scale: [1, 1.1, 1],
-    }}
-    transition={{
-      repeat: Infinity,
-      duration,
-      delay,
-      ease: "easeInOut",
-    }}
-  />
-);
-
-// Predefined bubble positions
-const bubbleConfigs = [
-  { size: 70, left: 10, top: 15, duration: 5, delay: 0 },
-  { size: 40, left: 20, top: 45, duration: 6, delay: 0.5 },
-  { size: 50, left: 35, top: 25, duration: 4, delay: 1 },
-  { size: 100, left: 45, top: 65, duration: 5, delay: 0.2 },
-  { size: 58, left: 60, top: 35, duration: 6, delay: 0.8 },
-  { size: 66, left: 75, top: 55, duration: 4, delay: 1.5 },
-  { size: 45, left: 85, top: 20, duration: 5, delay: 0.3 },
-  { size: 84, left: 15, top: 75, duration: 6, delay: 1.2 },
-  { size: 72, left: 30, top: 85, duration: 4, delay: 0.7 },
-  { size: 105, left: 50, top: 80, duration: 5, delay: 1.8 },
-  { size: 98, left: 70, top: 70, duration: 6, delay: 0.4 },
-  { size: 36, left: 80, top: 40, duration: 4, delay: 1.6 },
-  { size: 88, left: 90, top: 60, duration: 5, delay: 0.9 },
-  { size: 56, left: 25, top: 60, duration: 6, delay: 1.3 },
-  { size: 48, left: 65, top: 15, duration: 4, delay: 0.6 },
-];
+import MilkFlow from "@/components/faq/MilkFlow";
+import { MilkBubble } from "@/components/faq/MilkBubble";
+import { FAQItem } from "@/components/faq/FAQItem";
+import { BackgroundImage } from "@/components/faq/BackgroundImage";
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
+  const bubbleConfigs = [
+    { size: 70, left: 10, top: 15, duration: 5, delay: 0 },
+    { size: 40, left: 20, top: 45, duration: 6, delay: 0.5 },
+    { size: 50, left: 35, top: 25, duration: 4, delay: 1 },
+    { size: 100, left: 45, top: 65, duration: 5, delay: 0.2 },
+    { size: 58, left: 60, top: 35, duration: 6, delay: 0.8 },
+    { size: 66, left: 75, top: 55, duration: 4, delay: 1.5 },
+    { size: 45, left: 85, top: 20, duration: 5, delay: 0.3 },
+    { size: 84, left: 15, top: 75, duration: 6, delay: 1.2 },
+    { size: 72, left: 30, top: 85, duration: 4, delay: 0.7 },
+    { size: 105, left: 50, top: 80, duration: 5, delay: 1.8 },
+    { size: 98, left: 70, top: 70, duration: 6, delay: 0.4 },
+    { size: 36, left: 80, top: 40, duration: 4, delay: 1.6 },
+    { size: 88, left: 90, top: 60, duration: 5, delay: 0.9 },
+    { size: 56, left: 25, top: 60, duration: 6, delay: 1.3 },
+    { size: 48, left: 65, top: 15, duration: 4, delay: 0.6 },
+  ];
+
   const faqData = [
     {
-      question: "How do I place an order?",
+      question: "What is animal-free dairy protein?",
       answer:
-        "Simply browse our products, add items to your cart, and proceed to checkout. We accept various payment methods for your convenience.",
+        "We produce real dairy proteins made without animals. Confused? it's rather simple! We instruct microorganism (say bacteria, yeast or fungus) to produce the same dairy protein in laboratory environment using precision fermentation. You can enjoy the real taste, texture, and nutrition of dairy made sustainably but free of lactose, antibiotics, hormones, and antibiotics.",
     },
     {
-      question: "What are your delivery areas?",
+      question: "Why do we need animal-free dairy protein?",
       answer:
-        "We currently deliver to all major cities and surrounding areas. Enter your zip code at checkout to confirm delivery availability.",
+        "Everyone loves dairy products and they are essential nutrients in our life but loathes the downsides of animal agriculture. Traditional dairy farming is hugely unsustainable. It's a leading contributor to greenhouse gas emissions and a majorly inefficient use of resources. Plant-based alternatives also are not good enough. They are inferior in terms of flavour and nutrition and have limited usability as food ingredients. We are developing delicious and ethical dairy-based milk proteins produced without cows.",
     },
     {
-      question: "How fresh is your milk?",
+      question: "What makes animal-free dairy protein different from other 'alternative' sources of protein?",
       answer:
-        "Our milk is sourced daily from local farms and typically reaches you within 24-48 hours of production.",
+        "Animal-free dairy proteins produced by Zero Cow Factory are identical to those found in cow's milk as it is coming out from the same DNA of the Cow responsible for the protein production. It has the same chemical properties compare to the traditional dairy; hence no consumer behaviour change is required.",
     },
     {
-      question: "Do you offer subscriptions?",
+      question: "What is precision fermentation?",
       answer:
-        "Yes! You can subscribe to regular milk deliveries and save 10% on each order. Choose from weekly or monthly deliveries.",
+        "Precision fermentation uses microorganisms to produce specific functional ingredients (in our case dairy proteins like Casein & Whey).",
     },
     {
-      question: "What's your return policy?",
+      question: "Is animal-free dairy protein containing GMOs?",
       answer:
-        "If you're not satisfied with your product, please contact us within 24 hours of delivery and we'll arrange a replacement or refund.",
+        "No, our process involves genetic engineering but the final product is a pure protein without any GMOs.",
     },
     {
-      question: "Are your products organic?",
+      question: "Is animal-free dairy protein vegan?",
       answer:
-        "We offer both organic and conventional milk options. All our organic products are certified and clearly labeled.",
+        "Yes, as there are no animals involved.",
     },
     {
-      question: "How do you ensure product quality?",
+      question: "Why is that casein protein important?",
       answer:
-        "We maintain strict cold chain logistics and perform regular quality tests at every stage from farm to delivery.",
+        "Casein comprises around 80% of the total protein in cow's milk, while whey accounts for the remaining 20%. Casein protein is a complete protein source and it provides all the essential amino acids your body needs for growth and muscle recovery. No casein means – no cheese, no curd!",
     },
     {
-      question: "What payment methods do you accept?",
+      question: "What is special about A2 milk and Zero Cow Factory's A2 milk protein/A2 beta-casein?",
       answer:
-        "We accept all major credit cards, digital wallets, and bank transfers for your convenience.",
+        "The A2 variety does not contain the A1 beta-casein protein, which may be difficult for some people to digest. A nutrient dense A2 milk is indigenous to ancient India which comes from Gir cows (Bos primigenius indicus). We are making milk the hero again with all the goodness of A2. Human breastmilk contains only the A2 type form of beta-casein and has always been given to the babies since ages.",
     },
   ];
 
@@ -111,116 +76,48 @@ export default function FAQ() {
   };
 
   return (
-    <div className="min-h-screen w-full relative overflow-hidden">
+    <div className="flex flex-col min-h-screen">
       <Navbar />
-      {/* Gradient Background with Milk Image */}
-      <div className="absolute inset-0 bg-gradient-to-b from-dgreen via-ygreen to-lgreen -z-10" />
-      <div
-        className="absolute inset-0"
-        style={{
-          backgroundImage: 'url("/images/milk6.png")',
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-        }}
-      />
+      
+      <div className="flex-grow relative mt-12 sm:mt-16 md:mt-20">
+        {/* This container will ensure bubbles don't affect layout */}
+        <div className="absolute inset-0 w-full h-full overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-b from-dgreen via-ygreen to-lgreen -z-10" />
+          
+          <BackgroundImage 
+            src="/images/milk6.png"
+            alt="Background milk splash"
+          />
 
-      {/* Fixed Position Milk Bubbles */}
-      {bubbleConfigs.map((bubble, index) => (
-        <MilkBubble
-          key={index}
-          size={bubble.size}
-          left={bubble.left}
-          top={bubble.top}
-          duration={bubble.duration}
-          delay={bubble.delay}
-        />
-      ))}
-
-      {/* Content Container */}
-      <div className="relative max-w-5xl mx-auto px-12 py-28">
-        {/* FAQ Items */}
-        <div className="space-y-8 pb-4 mx-4">
-          {faqData.map((faq, index) => (
-            <motion.div
+          {bubbleConfigs.map((bubble, index) => (
+            <MilkBubble
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.5,
-                delay: index * 0.1,
-                ease: "easeOut",
-              }}
-              className="relative bg-lgreen rounded-2xl overflow-hidden group transition-all duration-500">
-              {/* Milk Splatter Effect Container */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                {/* Top Splatter */}
-                <div className="absolute -top-8 left-1/2 w-48 h-48 -translate-x-1/2 bg-white/20 rounded-full blur-xl transform scale-0 group-hover:scale-100 transition-transform duration-500" />
-                {/* Left Splatter */}
-                <div className="absolute top-1/2 -left-8 w-32 h-32 -translate-y-1/2 bg-white/20 rounded-full blur-lg transform scale-0 group-hover:scale-100 transition-transform duration-700 delay-100" />
-                {/* Right Splatter */}
-                <div className="absolute top-1/2 -right-8 w-32 h-32 -translate-y-1/2 bg-white/20 rounded-full blur-lg transform scale-0 group-hover:scale-100 transition-transform duration-700 delay-200" />
-                {/* Bottom Splatter */}
-                <div className="absolute -bottom-8 left-1/2 w-48 h-48 -translate-x-1/2 bg-white/20 rounded-full blur-xl transform scale-0 group-hover:scale-100 transition-transform duration-500 delay-300" />
-              </div>
-
-              <button
-                onClick={() => toggleQuestion(index)}
-                className="relative w-full px-10 py-12 flex items-center justify-between text-center group-hover:bg-white/5 transition-colors duration-500">
-                <span className="font-lilita text-4xl text-cream w-full">
-                  {faq.question}
-                </span>
-                <motion.div
-                  animate={{ rotate: openIndex === index ? 180 : 0 }}
-                  transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}>
-                  <ChevronDown className="w-8 h-8 text-cream" />
-                </motion.div>
-              </button>
-
-              <AnimatePresence>
-                {openIndex === index && (
-                  <motion.div
-                    initial={{ height: 0 }}
-                    animate={{
-                      height: "auto",
-                      transition: {
-                        duration: 0.8,
-                        ease: [0.4, 0, 0.2, 1],
-                      },
-                    }}
-                    exit={{
-                      height: 0,
-                      transition: {
-                        duration: 0.8,
-                        ease: [0.4, 0, 0.2, 1],
-                      },
-                    }}
-                    className="overflow-hidden relative">
-                    <div className="px-10 pb-8">
-                      <motion.p
-                        initial={{ opacity: 0 }}
-                        animate={{
-                          opacity: 1,
-                          transition: { duration: 0.5, delay: 0.3 },
-                        }}
-                        exit={{
-                          opacity: 0,
-                          transition: { duration: 0.3 },
-                        }}
-                        className="font-lilita text-xl text-cream leading-relaxed text-center">
-                        {faq.answer}
-                      </motion.p>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
+              {...bubble}
+            />
           ))}
         </div>
+
+        <div className="relative w-full max-w-5xl mx-auto px-3 sm:px-4 md:px-8 lg:px-12 py-8 sm:py-12 md:py-20 lg:py-28">
+          <div className="space-y-4 sm:space-y-6 md:space-y-8 pb-4 mx-1 sm:mx-2 md:mx-4">
+            {faqData.map((faq, index) => (
+              <FAQItem
+                key={index}
+                question={faq.question}
+                answer={faq.answer}
+                isOpen={openIndex === index}
+                onToggle={() => toggleQuestion(index)}
+                index={index}
+                totalItems={faqData.length}
+              />
+            ))}
+          </div>
+        </div>
       </div>
-      <div className="absolute bottom-0 left-0 right-0">
+
+      <div className="relative bg-gradient-to-b from-lgreen to-dgreen">
         <MilkFlow />
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 }
