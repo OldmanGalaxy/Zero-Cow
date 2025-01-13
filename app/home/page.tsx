@@ -1,10 +1,10 @@
 "use client";
 import React, { useEffect, useRef } from "react";
-import Navbar from "../../components/Navbar/Navbar";
-import Info2 from "../../components/Home/Info2";
-import Info1 from "../../components/Home/Info1";
-import Info3 from "../../components/Home/Info3";
-import Footer from "../../components/Footer/Footer";
+import Navbar from "@/components/Navbar/Navbar";
+import Info2 from "@/components/Home/Info2";
+import Info1 from "@/components/Home/Info1";
+import Info3 from "@/components/Home/Info3";
+import Footer from "@/components/Footer/Footer";
 
 const Home = () => {
   const infoSectionRef = useRef(null);
