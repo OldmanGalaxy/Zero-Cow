@@ -1,7 +1,15 @@
-
 export default function Footer() {
     return (
         <>
+            <div className='w-full '>
+                <img 
+
+                    src='/images/footer_milk2.png' 
+                    alt='Footer Decoration' 
+                    className='w-full h-auto object-cover '
+                />
+            </div>
+
             <div className='footer-container w-full min-h-[13rem] bg-dgreen flex flex-col md:flex-row'>
                 <div className='footer-start hidden md:block md:w-1/5'>
                 </div>
