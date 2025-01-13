@@ -26,7 +26,7 @@ const Info1 = () => {
   ];
 
   return (
-    <div className="w-full bg-gradient-to-b from-ygreen to-lgreen relative min-h-[1200px]">
+    <div className="w-full bg-ygreen relative min-h-[1200px]">
       {/* Background Image */}
       <div className="absolute inset-0 w-full h-full" style={{ top: '-400px' }}>
         <div className="w-full h-[calc(100%+200px)] overflow-hidden">
