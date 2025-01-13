@@ -1,4 +1,4 @@
-import MilkWave from "../Wave/Wave";
+import MilkWave from "./Wave";
 
 export default function Info2() {
   return (
