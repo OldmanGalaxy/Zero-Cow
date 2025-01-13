@@ -18,13 +18,17 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-dgreen border-b font-lilita">
+    <nav className="fixed top-0 left-0 right-0 bg-dgreen font-lilita z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
           {/* Logo Section */}
-          <div className="flex-shrink-0 flex items-center">
+          <div className="flex-shrink-0 transform hover:scale-110 transition-transform duration-300">
             <Link href="/">
-              <img className="h-10 w-auto" src="/images/logo.png" alt="Logo" />
+              <img 
+                className="h-10 w-auto hover:rotate-[360deg] transition-transform duration-1000 ease-in-out" 
+                src="/images/logo.png" 
+                alt="Logo" 
+              />
             </Link>
           </div>
 
@@ -34,13 +38,12 @@ const Navbar = () => {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`px-3 py-2 rounded-md font-medium text-2xl transition-colors duration-200 ${
-                  pathname === link.href
-                    ? "bg-ygreen text-dgreen hover:text-dgreen"
-                    : "text-cream hover:text-ygreen"
-                }`}
+                className={`text-ygreen relative overflow-hidden group px-3 py-2 rounded-md font-medium text-2xl transition-all duration-300 ease-in-out
+                  ${pathname === link.href ? "bg-lgreen text-dgreen" : ""}
+                  hover:text-lgreen hover:bg-ygreen hover:scale-105 transform`}
               >
-                {link.label}
+                <span className="relative z-10">{link.label}</span>
+                <div className="absolute inset-0 bg-ygreen transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
               </Link>
             ))}
           </div>
@@ -49,14 +52,14 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-cream hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500 transition-colors duration-200"
+              className="inline-flex items-center justify-center p-2 rounded-md text-cream hover:text-dgreen hover:bg-ygreen focus:outline-none focus:ring-2 focus:ring-lgreen transition-all duration-200"
               aria-expanded={isOpen}
               aria-label="Toggle menu"
             >
               {isOpen ? (
-                <X className="h-6 w-6" />
+                <X className="h-6 w-6 transform rotate-0 hover:rotate-180 transition-transform duration-300" />
               ) : (
-                <Menu className="h-6 w-6" />
+                <Menu className="h-6 w-6 transform rotate-0 hover:rotate-180 transition-transform duration-300" />
               )}
             </button>
           </div>
@@ -66,14 +69,17 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-black bg-opacity-60 shadow-lg rounded-b-lg">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-dgreen shadow-lg rounded-b-lg border-t border-lgreen">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`block px-3 py-2 rounded-md text-base font-medium text-cream hover:text-gray-900 hover:bg-gray-100 transition-colors duration-200 ${
-                  pathname === link.href ? "bg-lgreen text-white" : ""
-                }`}
+                className={`block px-3 py-2 rounded-md text-base font-medium transition-all duration-200 transform hover:translate-x-2
+                  ${
+                    pathname === link.href 
+                    ? "bg-lgreen text-dgreen" 
+                    : "text-ygreen hover:bg-ygreen hover:text-dgreen"
+                  }`}
               >
                 {link.label}
               </Link>

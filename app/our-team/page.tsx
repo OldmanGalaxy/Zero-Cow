@@ -5,20 +5,22 @@ import Section2 from "@/components/OurTeam/Section2";
 
 function page() {
   return (
-    <>
-      <div className="relative z-10">
-        <div
-          className="absolute bg-ygreen inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: "url('/images/milk1_full.png')",
-            zIndex: -1,
-          }}
-        ></div>
-        <Navbar />
+    <div className="min-h-screen relative">
+      <Navbar />
+      <div 
+        className="min-h-[calc(100vh-4rem)] relative"
+        style={{
+          backgroundImage: 'linear-gradient(to bottom, #118B50, #E3F0AF, #5DB996)',
+          backgroundSize: '100% calc(100% + 4rem)',
+          backgroundPosition: '0 -4rem',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
         <Section1 />
         <Section2 />
       </div>
-    </>
+    </div>
   );
 }
+
 export default page;
