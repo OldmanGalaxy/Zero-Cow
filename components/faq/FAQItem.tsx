@@ -7,6 +7,7 @@ interface FAQItemProps {
   isOpen: boolean;
   onToggle: () => void;
   index: number;
+  totalItems: number;
 }
 
 export const FAQItem = ({ question, answer, isOpen, onToggle, index }: FAQItemProps) => (

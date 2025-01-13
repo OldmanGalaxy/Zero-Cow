@@ -2,10 +2,10 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
-import MilkFlow from "@/components/faq/MilkFlow";
-import { MilkBubble } from "@/components/faq/MilkBubble";
-import { FAQItem } from "@/components/faq/FAQItem";
-import { BackgroundImage } from "@/components/faq/BackgroundImage";
+import MilkFlow from "@/components/FAQ/MilkFlow";
+import { MilkBubble } from "@/components/FAQ/MilkBubble";
+import { FAQItem } from "@/components/FAQ/FAQItem";
+import { BackgroundImage } from "@/components/FAQ/BackgroundImage";
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
