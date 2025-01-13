@@ -3,6 +3,8 @@ import MilkFlow from "@/components/faq/MilkFlow";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
 
 const MilkBubble = ({
   delay,
@@ -110,6 +112,7 @@ export default function FAQ() {
 
   return (
     <div className="min-h-screen w-full relative overflow-hidden">
+      <Navbar />
       {/* Gradient Background with Milk Image */}
       <div className="absolute inset-0 bg-gradient-to-b from-dgreen via-ygreen to-lgreen -z-10" />
       <div
@@ -217,6 +220,7 @@ export default function FAQ() {
       <div className="absolute bottom-0 left-0 right-0">
         <MilkFlow />
       </div>
+      <Footer />
     </div>
   );
 }
