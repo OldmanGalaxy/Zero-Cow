@@ -1,5 +1,6 @@
 import React from "react";
 import MilkSplatter from "./MilkSplatter";
+import MilkWave from "./MilkWave";
 
 function Section1() {
   return (
@@ -14,22 +15,26 @@ function Section1() {
           before:absolute before:inset-0 before:rounded-2xl before:md:rounded-r-[100px] before:md:rounded-l-none
           before:bg-gradient-to-r before:from-transparent before:via-white/5 before:to-transparent
           before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-1000
-          overflow-hidden"
+          overflow-hidden
+          flex flex-col justify-between"
       >
+        <MilkWave />
         <MilkSplatter />
         <div className="w-full max-w-3xl mx-auto relative z-10">
           <div className="text-center transform transition-transform duration-500 group-hover:scale-105">
-            <h2 className="text-ygreen text-3xl overflow-hidden sm:text-4xl md:text-5xl font-lilita mb-3 sm:mb-4
+            <h2 className="text-ygreen text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-lilita mb-3 sm:mb-4
                         transition-all duration-500 group-hover:text-dgreen group-hover:-translate-y-1">
               Sohil Kapadia
             </h2>
-            <p className="text-lg text-ygreen sm:text-xl md:text-2xl font-medium mb-4 sm:mb-6
+            <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-ygreen font-lilita mb-4 sm:mb-6
                         transition-all duration-500 group-hover:text-dgreen group-hover:translate-y-1">
               Co-Founder & Chief Executive Officer
             </p>
           </div>
-          <p className="text-base sm:text-lg md:text-xl text-center font-lilita
-                     opacity-90 transition-opacity duration-500 group-hover:opacity-100">
+        </div>
+        <div className="w-full max-w-3xl mx-auto relative z-10">
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-center font-lilita
+                     opacity-90 transition-opacity duration-500 group-hover:opacity-100 mb-4">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. In unde
             et vel at quis deserunt voluptatem commodi officiis quos nesciunt,
             quam tempora perferendis rem dolores alias harum recusandae
