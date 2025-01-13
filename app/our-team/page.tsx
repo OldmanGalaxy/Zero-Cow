@@ -13,7 +13,7 @@ function page() {
         style={{
           background: "transparent",
           backgroundImage:
-            "linear-gradient(to bottom, #118B50, #E3F0AF, #5DB996)",
+            "linear-gradient(to bottom, #118B50, #E3F0AF, #118B50)",
           backgroundSize: "100% 100%",
           backgroundPosition: "0 0",
           backgroundRepeat: "no-repeat",
