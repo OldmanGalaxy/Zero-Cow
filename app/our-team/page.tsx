@@ -1,8 +1,8 @@
 import React from "react";
-import Navbar from "@/components/Navbar/Navbar";
-import Section1 from "@/components/OurTeam/Section1";
-import Section2 from "@/components/OurTeam/Section2";
-import Footer from "@/components/Footer/Footer";
+import Navbar from "../../components/Navbar/Navbar";
+import Section1 from "../../components/OurTeam/Section1";
+import Section2 from "../../components/OurTeam/Section2";
+import Footer from "../../components/Footer/Footer";
 
 function page() {
   return (
