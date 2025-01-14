@@ -72,12 +72,14 @@ const ImpactComponent = () => {
   };
 
   return (
-    <div className="relative min-h-screen w-full overflow-hidden font-lilita">
+    <div className="relative w-full overflow-hidden font-lilita">
       {/* Background gradient layer */}
       <div className="absolute inset-0 z-[-2] bg-gradient-to-b from-[#118B50] via-[#E3F0AF] to-[#5DB996]" />
 
-      {/* Background Images Container */}
-      <div ref={backgroundRef} className="absolute inset-0 z-[-1] -mt-[5px]">
+      {/* Background Images Container - now uses absolute positioning with full height */}
+      <div
+        ref={backgroundRef}
+        className="absolute inset-0 z-[-1] h-full w-full">
         {/* First background image */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -85,7 +87,7 @@ const ImpactComponent = () => {
             isBackgroundInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }
           }
           transition={{ duration: 1 }}
-          className="absolute top-0 left-0 w-full h-[50%]">
+          className="absolute top-0 left-0 w-full h-1/2">
           <img
             src="/images/milk3.png"
             alt="Background Milk 3"
@@ -100,7 +102,7 @@ const ImpactComponent = () => {
             isBackgroundInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
           }
           transition={{ duration: 1, delay: 0.3 }}
-          className="absolute top-[50%] left-0 w-full h-[50%]">
+          className="absolute top-1/2 left-0 w-full h-1/2">
           <img
             src="/images/milk4.png"
             alt="Background Milk 4"

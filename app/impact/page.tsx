@@ -4,12 +4,12 @@ import Navbar from '@/components/Navbar/Navbar'
 
 function page() {
   return (
-   <>
-   {/* <div className='overflow-hidden'> */}
-    <Navbar/>
-    <ImpactComponents/>
-    {/* </div> */}
-   </>
+    <>
+      <Navbar />
+      <main className="pt-20"> {/* Add padding-top equal to navbar height */}
+        <ImpactComponents />
+      </main>
+    </>
   )
 }
 
