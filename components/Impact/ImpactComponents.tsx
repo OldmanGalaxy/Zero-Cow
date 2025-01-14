@@ -152,7 +152,7 @@ const ImpactComponent = () => {
                 <div className="flex-1 flex flex-col justify-center p-6 md:p-8">
                   <Wave />
                   <motion.h2
-                    className="text-cream text-2xl md:text-5xl mb-4 md:mb-6 cursor-pointer relative group"
+                    className="text-cream text-2xl md:text-5xl mb-4 md:mb-6 cursor-default relative group"
                     initial="initial"
                     animate={isCardInView ? { opacity: 1 } : { opacity: 0 }}
                     whileHover="hover"
@@ -164,7 +164,7 @@ const ImpactComponent = () => {
                     {card.points.map((point, idx) => (
                       <motion.li
                         key={idx}
-                        className="text-white text-base md:text-2xl flex items-center"
+                        className="text-cream text-base md:text-2xl flex items-center"
                         initial={{ opacity: 0, x: -20 }}
                         animate={
                           isCardInView
