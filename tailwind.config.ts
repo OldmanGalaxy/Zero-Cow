@@ -20,12 +20,12 @@ export default {
         lovelace: ["Lovelace Text", "sans-serif"],
       },
       animation: {
-        "loop-scroll": "loop-scroll 15s linear infinite"
+        "loop-scroll": "loop-scroll 10s linear infinite"
       },
       keyframes: {
         'loop-scroll': {
           '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(-50%)' }
+          '100%': { transform: 'translateX(-100%)' }
         },
       },
     },
