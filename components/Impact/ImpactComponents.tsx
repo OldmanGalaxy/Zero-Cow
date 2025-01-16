@@ -46,6 +46,8 @@ const cards = [
   },
 ];
 
+
+
 const ImpactComponent = () => {
   const backgroundRef = useRef(null);
   const isBackgroundInView = useInView(backgroundRef, {
@@ -118,6 +120,7 @@ const ImpactComponent = () => {
           const isCardInView = useInView(cardRef, { once: true, amount: 0.3 });
 
           return (
+            <>
             <motion.div
               ref={cardRef}
               key={index}
@@ -182,6 +185,7 @@ const ImpactComponent = () => {
                 </div>
               </div>
             </motion.div>
+            </>
           );
         })}
       </div>
