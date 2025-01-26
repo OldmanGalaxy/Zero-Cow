@@ -23,7 +23,7 @@ const Navbar = () => {
         <div className="flex justify-between h-20 items-center">
           {/* Logo Section */}
           <div className="flex-shrink-0 transform hover:scale-110 transition-transform duration-300">
-            <Link href="/">
+            <Link href="/"> 
               <img 
                 className="h-10 w-auto hover:rotate-[360deg] transition-transform duration-1000 ease-in-out" 
                 src="/images/logo.png" 

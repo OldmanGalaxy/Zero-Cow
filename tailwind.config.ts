@@ -1,3 +1,4 @@
+import { lookup } from "dns";
 import type { Config } from "tailwindcss";
 
 export default {
@@ -19,6 +20,13 @@ export default {
         lovelace: ["Lovelace Text", "sans-serif"],
       },
       animation: {
+        "loop-scroll": "loop-scroll 10s linear infinite"
+      },
+      keyframes: {
+        'loop-scroll': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-100%)' }
+        },
         'float-1': 'float 6s ease-in-out infinite',
         'float-2': 'float 6s ease-in-out infinite 1.5s',
         'float-3': 'float 6s ease-in-out infinite 3s',
