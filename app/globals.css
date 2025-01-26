@@ -11,6 +11,9 @@
 * {
     margin: 0;
     padding: 0;
+    ::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 @font-face {
@@ -21,4 +24,9 @@
 @font-face {
     font-family: 'Lovelace Text';
     src: url('/fonts/LovelaceText.ttf');
+}
+
+body {
+    background-color: #E3F0AF;
+    overflow-x: hidden;
 }

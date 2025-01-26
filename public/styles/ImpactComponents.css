@@ -1,0 +1,292 @@
+<<<<<<< Updated upstream
+Base styles with mobile-first approach
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#__next {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden; 
+}
+
+/* Layout containers */
+=======
+/* Base styles */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Background color layer */
+>>>>>>> Stashed changes
+.bg-color-layer {
+  position: fixed;
+  inset: 0;
+  background-color: #e3f0af;
+  z-index: 0;
+}
+
+<<<<<<< Updated upstream
+.bg-images-container {
+  position: fixed; /* Changed to fixed to prevent scrolling issues */
+  inset: 0;
+  z-index: 1;
+  pointer-events: none; /* Allows clicking through to content */
+}
+
+.content-container {
+  position: relative;
+  z-index: 2;
+  padding: 1rem;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Background images optimization */
+[style*="background-image"] {
+  position: absolute;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* background-size: contain; */
+  /* width: 100%;
+  height: 100%; */
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Mobile styles (base) */
+.relative {
+  position: relative;
+  padding: 0.5rem;
+}
+
+[style*="url('/images/milk3.png')"] {
+  opacity: 0.4;
+  background-size: cover; /* Changed to cover for better mobile display */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+[style*="url('/images/bubbles.png')"] {
+  width: 100px;
+  height: 100px;
+  top: 20px;
+  right: 10px;
+  opacity: 0.5;
+  background-size: contain;
+  position: absolute;
+}
+
+/* Card components */
+[class*="w-[200px]"] {
+  width: 160px;
+  height: 80px;
+  margin: 0.5rem;
+}
+
+/* Image components */
+img[class*="w-20"] {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+/* Spacing utilities */
+[class*="ml-20"],
+[class*="mr-20"] {
+  margin: 0.5rem;
+}
+
+/* Tablet styles */
+@media (min-width: 481px) {
+  .content-container {
+    padding: 1.5rem;
+  }
+  
+  [style*="url('/images/milk3.png')"] {
+    opacity: 0.6;
+  }
+  
+  [style*="url('/images/bubbles.png')"] {
+    width: 150px;
+    height: 150px;
+    top: 40px;
+    right: 15px;
+    opacity: 0.6;
+  }
+  
+  [class*="w-[200px]"] {
+    width: 180px;
+    height: 90px;
+  }
+  
+  img[class*="w-20"] {
+    width: 70px;
+    height: 70px;
+  }
+  
+  [class*="ml-20"] {
+    margin-left: 1.5rem;
+  }
+  
+  [class*="mr-20"] {
+    margin-right: 1.5rem;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 769px) {
+  .content-container {
+    padding: 2rem;
+    max-width: 1200px;
+  }
+  
+  [style*="url('/images/milk3.png')"] {
+    opacity: 1;
+    background-size: cover;
+  }
+  
+  [style*="url('/images/bubbles.png')"] {
+    width: 200px;
+    height: 200px;
+    top: 50px;
+    right: 20px;
+    opacity: 0.8;
+  }
+  
+  [class*="w-[200px]"] {
+    width: 200px;
+    height: 100px;
+  }
+  
+  img[class*="w-20"] {
+    width: 80px;
+    height: 80px;
+  }
+  
+  [class*="ml-20"] {
+    margin-left: 2rem;
+  }
+  
+  [class*="mr-20"] {
+    margin-right: 2rem;
+  }
+}
+
+/* Large desktop styles */
+@media (min-width: 1200px) {
+  .content-container {
+    padding: 2.5rem;
+  }
+  
+  [style*="url('/images/milk3.png')"] {
+    background-size: cover;
+  }
+}
+
+/* Print styles */
+@media print {
+  .bg-images-container {
+    display: none;
+  }
+  
+  .content-container {
+    padding: 0;
+  }
+}
+=======
+/* Background images container */
+.bg-images-container {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Content container */
+.content-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Ensure background color is visible */
+#__next {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .relative {
+    padding: 0 1rem;
+  }
+  
+  /* Adjust background images for tablets */
+  div[style*="background-image"] {
+    background-size: contain;
+  }
+  
+  div[style*="url('/images/milk3.png')"] {
+    opacity: 0.3; /* Slightly reduce opacity on smaller screens */
+  }
+  
+  div[style*="url('/images/bubbles.png')"] {
+    width: 150px;
+    height: 150px;
+    top: 50px;
+    right: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Adjust background images for mobile */
+  div[style*="url('/images/bubbles.png')"] {
+    width: 100px;
+    height: 100px;
+    top: 40px;
+    right: 10px;
+    opacity: 0.5; /* Further reduce opacity on mobile */
+  }
+  
+  /* Adjust content cards for mobile */
+  div[class*="w-[200px]"] {
+    width: 160px;
+    height: 80px;
+  }
+  
+  /* Adjust images within cards for mobile */
+  img[class*="w-20"] {
+    width: 60px;
+    height: 60px;
+  }
+  
+  /* Adjust spacing for mobile */
+  div[class*="ml-20"] {
+    margin-left: 1rem;
+  }
+  
+  div[class*="mr-20"] {
+    margin-right: 1rem;
+  }
+}
+
+/* Ensure proper stacking context */
+.relative {
+  position: relative;
+}
+
+/* Improve performance for background images */
+div[style*="background-image"] {
+  will-change: transform;
+  backface-visibility: hidden;
+}
+>>>>>>> Stashed changes
