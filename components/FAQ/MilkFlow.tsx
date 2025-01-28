@@ -24,7 +24,7 @@ const MilkFlow = () => (
         <animate
           attributeName="opacity"
           dur="3s"
-          values="0.4;0.6;0.4"
+          values="0.8;1;0.8"
           repeatCount="indefinite"
         />
       </use>

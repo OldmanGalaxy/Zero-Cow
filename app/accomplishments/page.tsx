@@ -1,8 +1,7 @@
-// page.tsx
 "use client";
 import React, { useEffect, useRef } from "react";
 import Navbar from "@/components/Navbar/Navbar";
-import Footer from "@/components/Footer/footer";
+import Footer from "@/components/Footer/Footer";
 import Section1 from "@/components/Accomplishments/Section1";
 import Section2 from "@/components/Accomplishments/Section2";
 import Section4 from "@/components/Accomplishments/Section4";

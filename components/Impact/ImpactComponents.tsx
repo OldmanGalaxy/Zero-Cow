@@ -1,11 +1,22 @@
+// ImpactComponents.tsx
 "use client";
 import Wave from "../Wave/Wave";
 import React from "react";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
-const cards = [
+interface Card {
+  id: string;
+  image: string;
+  alt: string;
+  angle: number;
+  title: string;
+  points: string[];
+}
+
+const cards: Card[] = [
   {
+    id: "healthier-food",
     image: "/images/burger.png",
     alt: "Burger",
     angle: -23.55,
@@ -19,6 +30,7 @@ const cards = [
     ],
   },
   {
+    id: "sustainability",
     image: "/images/leaf.png",
     alt: "Leaf",
     angle: -27.25,
@@ -26,6 +38,7 @@ const cards = [
     points: ["Better for planet", "Better for human", "Better for animals"],
   },
   {
+    id: "food-science",
     image: "/images/flask.png",
     alt: "Flask",
     angle: 40.93,
@@ -33,6 +46,7 @@ const cards = [
     points: ["No animals", "No plants", "Only microbes"],
   },
   {
+    id: "climate-friendly",
     image: "/images/tree.png",
     alt: "Tree",
     angle: -30,
@@ -46,10 +60,8 @@ const cards = [
   },
 ];
 
-
-
 const ImpactComponent = () => {
-  const backgroundRef = useRef(null);
+  const backgroundRef = useRef<HTMLDivElement>(null);
   const isBackgroundInView = useInView(backgroundRef, {
     once: true,
     amount: 0.3,
@@ -76,13 +88,12 @@ const ImpactComponent = () => {
   return (
     <div className="relative w-full overflow-hidden font-lilita">
       {/* Background gradient layer */}
-      <div className="absolute inset-0 z-[-2] bg-gradient-to-b from-[#118B50] via-[#E3F0AF] to-[#5DB996]" />
+      <div className="absolute inset-0 z-[-2] bg-gradient-to-b from-dgreen via-ygreen to-lgreen" />
 
-      {/* Background Images Container - now uses absolute positioning with full height */}
+      {/* Background Images Container */}
       <div
         ref={backgroundRef}
         className="absolute inset-0 z-[-1] h-full w-full">
-        {/* First background image */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={
@@ -97,7 +108,6 @@ const ImpactComponent = () => {
           />
         </motion.div>
 
-        {/* Second background image */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={
@@ -116,14 +126,13 @@ const ImpactComponent = () => {
       {/* Impact Items Container */}
       <div className="relative z-[1] rounded-xl flex flex-col items-center justify-center min-h-screen gap-12 py-[80px] px-4 md:px-8">
         {cards.map((card, index) => {
-          const cardRef = useRef(null);
+          const cardRef = useRef<HTMLDivElement>(null);
           const isCardInView = useInView(cardRef, { once: true, amount: 0.3 });
 
           return (
-            <>
             <motion.div
               ref={cardRef}
-              key={index}
+              key={card.id}
               initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
               animate={
                 isCardInView
@@ -134,7 +143,7 @@ const ImpactComponent = () => {
               whileHover={{ scale: 1.02 }}
               className="relative flex items-center justify-center w-full">
               <div
-                className={`relative w-full md:w-[800px] h-auto md:h-[350px] overflow-hidden bg-[#5DB996]/90 backdrop-blur-sm rounded-[40px] shadow-lg flex flex-col md:flex-row
+                className={`relative w-full md:w-[800px] h-auto md:h-[350px] overflow-hidden bg-lgreen/90 backdrop-blur-sm rounded-[40px] shadow-lg flex flex-col md:flex-row
                 ${
                   card.alt === "Leaf" || card.alt === "Tree"
                     ? "ml-auto right-[10px] md:-right-[10px] md:flex-row-reverse"
@@ -146,9 +155,7 @@ const ImpactComponent = () => {
                     src={card.image}
                     alt={card.alt}
                     className="absolute w-[200px] md:w-[280px] h-[200px] md:h-[280px] object-contain"
-                    style={{
-                      transform: `rotate(${card.angle}deg)`,
-                    }}
+                    style={{ transform: `rotate(${card.angle}deg)` }}
                     transition={{ type: "spring", stiffness: 100 }}
                   />
                 </div>
@@ -162,13 +169,13 @@ const ImpactComponent = () => {
                     animate={isCardInView ? { opacity: 1 } : { opacity: 0 }}
                     whileHover="hover"
                     variants={titleHoverVariants}>
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#FBF6E9] group-hover:w-full transition-all duration-300 ease-out" />
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cream group-hover:w-full transition-all duration-300 ease-out" />
                     {card.title}
                   </motion.h2>
                   <ul className="space-y-2 md:space-y-3">
                     {card.points.map((point, idx) => (
                       <motion.li
-                        key={idx}
+                        key={`${card.id}-point-${idx}`}
                         className="text-cream text-base md:text-2xl flex items-center"
                         initial={{ opacity: 0, x: -20 }}
                         animate={
@@ -185,7 +192,6 @@ const ImpactComponent = () => {
                 </div>
               </div>
             </motion.div>
-            </>
           );
         })}
       </div>
