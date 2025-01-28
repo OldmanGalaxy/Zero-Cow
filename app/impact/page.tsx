@@ -4,35 +4,37 @@ import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import MilkFlow from "@/components/FAQ/MilkFlow";
 
-function Page() {
+const ImpactPage: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen relative bg-dgreen">
       <Navbar />
 
-      <main className="flex-grow pt-20">
+      {/* Main content with gradient background */}
+      <div
+        className="min-h-screen pb-32 relative"
+        style={{
+          background: "transparent",
+          backgroundImage: "linear-gradient(to bottom, #118B50, #E3F0AF, #5DB996)",
+          backgroundSize: "100% 100%",
+          backgroundPosition: "0 0",
+          backgroundRepeat: "no-repeat",
+          marginTop: "5rem",
+        }}>
         <ImpactComponents />
-      </main>
+      </div>
 
-      {/* Footer section with responsive milk flow positioning */}
+      {/* Footer section with milk animation */}
       <div className="relative">
-        {/* Milk flow with responsive positioning */}
+        {/* Milk flow animation positioned right above the footer */}
         <div
-          className="absolute w-full"
-          style={{
-            top: "min(-6vw, -160px)",
-            minHeight: "100px",
-            zIndex: 10,
-          }}>
+          className="absolute w-full overflow-hidden"
+          style={{ transform: "translateY(-99%)" }}>
           <MilkFlow />
         </div>
-
-        {/* Footer with gradient background */}
-        <div className="relative bg-gradient-to-b from-lgreen to-dgreen pt-16 sm:pt-20 md:pt-24">
-          <Footer />
-        </div>
+        <Footer />
       </div>
     </div>
   );
-}
+};
 
-export default Page;
+export default ImpactPage;
