@@ -34,8 +34,7 @@ export default function Footer() {
                 (item) => (
                   <li
                     key={item}
-                    className="hover:opacity-80 cursor-pointer transform hover:translate-x-1 transition-transform duration-200"
-                  >
+                    className="hover:opacity-80 cursor-pointer transform hover:translate-x-1 transition-transform duration-200">
                     {item}
                   </li>
                 )
@@ -61,8 +60,7 @@ export default function Footer() {
               {["Home", "Impact", "Accomplishments"].map((item) => (
                 <li
                   key={item}
-                  className="hover:opacity-80 cursor-pointer transform hover:translate-x-2 transition-transform duration-200"
-                >
+                  className="hover:opacity-80 cursor-pointer transform hover:translate-x-2 transition-transform duration-200">
                   {item}
                 </li>
               ))}
@@ -77,8 +75,7 @@ export default function Footer() {
               {["Our Team", "FAQ"].map((item) => (
                 <li
                   key={item}
-                  className="hover:opacity-80 cursor-pointer transform hover:translate-x-2 transition-transform duration-200"
-                >
+                  className="hover:opacity-80 cursor-pointer transform hover:translate-x-2 transition-transform duration-200">
                   {item}
                 </li>
               ))}
