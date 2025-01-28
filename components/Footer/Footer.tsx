@@ -120,7 +120,7 @@ export default function Footer() {
             <div className="w-2/3 h-[4px] bg-cream mt-6 mb-3"></div>
           </div>
           <p className="text-cream font-lilita hover:scale-105 transition-transform">
-            ©2025 All rights reserved. Website by Purv Kabaria
+            ©2025 All rights reserved. Website by PCOJ
           </p>
         </div>
       </div>
