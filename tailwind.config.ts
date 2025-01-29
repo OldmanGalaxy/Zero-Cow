@@ -19,7 +19,7 @@ export default {
         lovelace: ["Lovelace Text", "sans-serif"],
       },
       animation: {
-        "loop-scroll": "loop-scroll 50s linear infinite",
+        "loop-scroll": "loop-scroll 7s linear infinite",
       },
       keyframes: {
         "loop-scroll": {
