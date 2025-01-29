@@ -39,7 +39,7 @@ const Home = () => {
         <div className="bg-gradient-to-b from-dgreen to-ygreen h-full w-full">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 className="text-cream font-lilita pt-24 text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl break-words leading-tight transition-all duration-300 hover:scale-105 hover:text-white">
-              Zero Cow <br /> Factory
+              No Cow <br /> Factory
             </h1>
           </div>
         </div>

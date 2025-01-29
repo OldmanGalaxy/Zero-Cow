@@ -111,7 +111,7 @@ export default function Footer() {
             <div className="w-2/3 h-[3px] bg-cream mt-5 mb-2"></div>
           </div>
           <p className="text-cream font-lilita hover:scale-105 transition-transform">
-            Website by Purv Kabaria
+            Website by PCOJ
           </p>
         </div>
 
