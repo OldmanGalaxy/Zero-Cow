@@ -45,7 +45,7 @@ function Accomplishments() {
               backgroundImage: "url('/images/milk2_full.png')",
               zIndex: 0,
             }}></div>
-          <div className="bg-gradient-to-b from-dgreen via-ygreen to-dgreen">
+          <div className="bg-gradient-to-b from-dgreen via-ygreen to-lgreen">
             <Section1 />
             <Section2 />
             <Section3 />
