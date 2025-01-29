@@ -6,6 +6,7 @@ import Section1 from "@/components/Accomplishments/Section1";
 import Section2 from "@/components/Accomplishments/Section2";
 import Section4 from "@/components/Accomplishments/Section4";
 import Section3 from "@/components/Accomplishments/Section3";
+import MilkFlow from "@/components/FAQ/MilkFlow";
 
 function Accomplishments() {
   const infoSectionRef = useRef(null);
@@ -35,24 +36,44 @@ function Accomplishments() {
 
   return (
     <>
-      <Navbar />
-      <main className="relative mt-20">
-        <div className="relative z-10">
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{
-              backgroundImage: "url('/images/milk2_full.png')",
-              zIndex: 0,
-            }}></div>
-          <div className="bg-gradient-to-b from-dgreen via-ygreen to-lgreen">
-            <Section1 />
-            <Section2 />
-            <Section3 />
-            <Section4 />
+      <div className="min-h-screen flex flex-col">
+        <Navbar />
+
+        {/* Main content */}
+        <main className="flex-grow">
+          <div className="relative mt-20">
+            <div
+              className="fixed inset-0 bg-cover bg-center"
+              style={{
+                backgroundImage: "url('/images/milk2_full.png')",
+                zIndex: -1,
+              }}
+            />
+            <div className="relative bg-gradient-to-b from-dgreen via-ygreen to-lgreen">
+              <Section1 />
+              <Section2 />
+              <Section3 />
+              <Section4 />
+            </div>
           </div>
+        </main>
+      </div>
+
+      {/* Footer section with milk flow transition */}
+      <div className="relative">
+        {/* Milk flow positioned to overlap */}
+        <div
+          className="absolute bottom-full left-0 right-0 overflow-hidden z-10"
+          style={{ transform: "translateY(1px)" }} // Ensures seamless connection
+        >
+          <MilkFlow />
+        </div>
+
+        {/* Footer with gradient background */}
+        <div className="relative bg-gradient-to-b from-lgreen to-dgreen">
           <Footer />
         </div>
-      </main>
+      </div>
     </>
   );
 }
