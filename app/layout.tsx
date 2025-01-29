@@ -1,7 +1,7 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'Zero Cow Factory',
+  title: 'No Cow Factory',
   description: 'Created by Purv Kabaria',
 }
 
