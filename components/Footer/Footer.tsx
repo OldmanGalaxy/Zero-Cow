@@ -1,24 +1,93 @@
+import Link from "next/link";
+
 export default function Footer() {
+  const navigationLinks = [
+    { name: "Home", path: "/" },
+    { name: "Our Team", path: "/team" },
+    { name: "Impact", path: "/impact" },
+    { name: "Accomplishments", path: "/accomplishments" },
+    { name: "FAQ", path: "/faq" },
+  ];
+
+  const linkedinUrl = "https://www.linkedin.com/";
+
   return (
     <>
-      <div className="footer-container w-full min-h-[13rem] bg-dgreen flex flex-col md:flex-row relative overflow-hidden group">
-        {/* Milk splash animation elements - moved to top border */}
-        <div className="absolute left-1/4 top-0 w-8 h-8 bg-cream rounded-full opacity-0 group-hover:opacity-30 transition-all duration-700 group-hover:scale-[6] group-hover:translate-y-2"></div>
-        <div className="absolute left-1/2 top-0 w-8 h-8 bg-cream rounded-full opacity-0 group-hover:opacity-20 transition-all duration-1000 delay-100 group-hover:scale-[5] group-hover:translate-y-3"></div>
-        <div className="absolute right-1/4 top-0 w-8 h-8 bg-cream rounded-full opacity-0 group-hover:opacity-25 transition-all duration-700 delay-200 group-hover:scale-[4] group-hover:translate-y-1"></div>
+      <div className="footer-container w-full min-h-[13rem] bg-dgreen flex flex-col md:flex-row relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+          <svg
+            className="w-full h-32"
+            viewBox="0 0 1200 100"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient
+                id="dropGradient"
+                cx="50%"
+                cy="50%"
+                r="50%"
+                fx="50%"
+                fy="50%">
+                <stop
+                  offset="0%"
+                  style={{ stopColor: "#FBF6E9", stopOpacity: 0.4 }}
+                />
+                <stop
+                  offset="100%"
+                  style={{ stopColor: "#FBF6E9", stopOpacity: 0 }}
+                />
+              </radialGradient>
+
+              <path id="dropPath" d="M0,0 Q -4,8 0,16 Q 4,8 0,0" />
+            </defs>
+
+            <g>
+              {[...Array(12)].map((_, i) => (
+                <use
+                  key={i}
+                  href="#dropPath"
+                  fill="url(#dropGradient)"
+                  transform={`translate(${100 + i * 100}, 0) scale(2)`}>
+                  <animateTransform
+                    attributeName="transform"
+                    type="translate"
+                    values={`${100 + i * 100},0; ${100 + i * 100},100`}
+                    dur={`${1.5 + Math.random()}s`}
+                    begin={`${i * 0.2}s`}
+                    repeatCount="indefinite"
+                  />
+                  <animate
+                    attributeName="opacity"
+                    values="0;1;0"
+                    dur={`${1.5 + Math.random()}s`}
+                    begin={`${i * 0.2}s`}
+                    repeatCount="indefinite"
+                  />
+                </use>
+              ))}
+            </g>
+          </svg>
+        </div>
 
         <div className="footer-start hidden md:block md:w-1/5"></div>
+
         <div className="footer-mobile w-full flex flex-row md:hidden relative z-10">
           <div className="social-media-container w-1/3 flex flex-col my-8 pt-2">
             <div className="social-media-text text-cream text-2xl text-center font-lilita hover:scale-105 transition-transform">
               Social
             </div>
             <div className="footer-logo-container h-full w-full flex justify-center">
-              <img
-                src="/images/linkedin.png"
-                alt="Linkedin"
-                className="footer-logo-image h-20 w-20 hover:opacity-80 cursor-pointer transform hover:scale-110 transition-transform duration-300"
-              />
+              <a
+                href={linkedinUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block">
+                <img
+                  src="/images/linkedin.png"
+                  alt="Linkedin"
+                  className="footer-logo-image h-20 w-20 hover:opacity-80 cursor-pointer transform hover:scale-110 transition-transform duration-300"
+                />
+              </a>
             </div>
             <div className="text-cream text-2xl text-center font-lilita hover:scale-105 transition-transform">
               Media
@@ -30,24 +99,26 @@ export default function Footer() {
               Links
             </div>
             <ul className="links text-cream text-base font-lilita space-y-1 mt-2">
-              {["Home", "Our Team", "Impact", "Accomplishments", "FAQ"].map(
-                (item) => (
-                  <li
-                    key={item}
-                    className="hover:opacity-80 cursor-pointer transform hover:translate-x-1 transition-transform duration-200">
-                    {item}
-                  </li>
-                )
-              )}
+              {navigationLinks.map((link) => (
+                <li
+                  key={link.name}
+                  className="hover:opacity-80 cursor-pointer transform hover:translate-x-1 transition-transform duration-200">
+                  <Link href={link.path} className="block">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           <div className="logo-container w-1/3 flex justify-center items-start pl-4 mt-16">
-            <img
-              src="/images/logo.png"
-              alt="logo"
-              className="footer-logo-image w-16 hover:rotate-[360deg] transition-transform duration-1000 ease-in-out cursor-pointer"
-            />
+            <Link href="/">
+              <img
+                src="/images/logo.png"
+                alt="logo"
+                className="footer-logo-image w-16 hover:rotate-[360deg] transition-transform duration-1000 ease-in-out cursor-pointer"
+              />
+            </Link>
           </div>
         </div>
 
@@ -57,11 +128,13 @@ export default function Footer() {
               Links
             </div>
             <ul className="links1 text-cream text-xl md:text-2xl font-lilita space-y-2 md:space-y-3 mt-2">
-              {["Home", "Impact", "Accomplishments"].map((item) => (
+              {navigationLinks.slice(0, 3).map((link) => (
                 <li
-                  key={item}
+                  key={link.name}
                   className="hover:opacity-80 cursor-pointer transform hover:translate-x-2 transition-transform duration-200">
-                  {item}
+                  <Link href={link.path} className="block">
+                    {link.name}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -72,11 +145,13 @@ export default function Footer() {
               Links
             </div>
             <ul className="links2 text-cream text-xl md:text-2xl font-lilita space-y-2 md:space-y-3 mt-2">
-              {["Our Team", "FAQ"].map((item) => (
+              {navigationLinks.slice(3).map((link) => (
                 <li
-                  key={item}
+                  key={link.name}
                   className="hover:opacity-80 cursor-pointer transform hover:translate-x-2 transition-transform duration-200">
-                  {item}
+                  <Link href={link.path} className="block">
+                    {link.name}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -87,21 +162,29 @@ export default function Footer() {
               Social Media
             </div>
             <div className="footer-logo-container h-full w-full flex justify-center mt-2">
-              <img
-                src="/images/linkedin.png"
-                alt="Linkedin"
-                className="footer-logo-image w-24 md:w-32 hover:opacity-80 cursor-pointer transform hover:scale-110 transition-transform duration-300"
-              />
+              <a
+                href={linkedinUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block">
+                <img
+                  src="/images/linkedin.png"
+                  alt="Linkedin"
+                  className="footer-logo-image w-24 md:w-32 hover:opacity-80 cursor-pointer transform hover:scale-110 transition-transform duration-300"
+                />
+              </a>
             </div>
           </div>
         </div>
 
         <div className="footer-end hidden md:flex h-full md:w-1/5 md:justify-end items-center md:mr-2 relative z-10">
-          <img
-            src="/images/logo.png"
-            alt="logo"
-            className="footer-logo-image w-24 md:w-32 mt-14 mr-20 hover:rotate-[360deg] transition-transform duration-1000 ease-in-out cursor-pointer"
-          />
+          <Link href="/">
+            <img
+              src="/images/logo.png"
+              alt="logo"
+              className="footer-logo-image w-24 md:w-32 mt-14 mr-20 hover:rotate-[360deg] transition-transform duration-1000 ease-in-out cursor-pointer"
+            />
+          </Link>
         </div>
       </div>
 
