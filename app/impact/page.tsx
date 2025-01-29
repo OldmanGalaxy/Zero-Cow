@@ -13,21 +13,15 @@ function Page() {
         <ImpactComponents />
       </main>
 
-      {/* Footer section with responsive milk flow positioning */}
+      {/* Footer section with seamless milk flow transition */}
       <div className="relative">
-        {/* Milk flow with responsive positioning */}
-        <div
-          className="absolute w-full"
-          style={{
-            top: "min(-6vw, -160px)",
-            minHeight: "100px",
-            zIndex: 10,
-          }}>
+        {/* Milk flow positioned to overlap perfectly */}
+        <div className="absolute bottom-full w-full">
           <MilkFlow />
         </div>
 
         {/* Footer with gradient background */}
-        <div className="relative bg-gradient-to-b from-lgreen to-dgreen pt-16 sm:pt-20 md:pt-24">
+        <div className="relative bg-gradient-to-b from-lgreen to-dgreen">
           <Footer />
         </div>
       </div>
