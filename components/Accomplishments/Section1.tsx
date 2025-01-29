@@ -61,10 +61,8 @@ function Circle() {
               <p
                 className="text-lg sm:text-lg text-white md:text-2xl lg:text-3xl text-center font-lilita
                        opacity-90 transition-opacity duration-500 group-hover:opacity-100 mb-4">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. In
-                unde et vel at quis deserunt voluptatem commodi officiis quos
-                nesciunt, quam tempora perferendis rem dolores alias harum
-                recusandae aliquam natus?
+                       No Cow Factory is renowned for its innovation in life science.
+                       We are constantly innovating to meet the needs of the future.
               </p>
             </div>
           </div>

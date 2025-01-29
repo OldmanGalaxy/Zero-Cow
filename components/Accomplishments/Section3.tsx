@@ -45,10 +45,8 @@ function Circle() {
               className="text-lg sm:text-xl text-white md:text-2xl lg:text-3xl text-center font-lilita
                      opacity-90 transition-opacity duration-500 group-hover:opacity-100 mb-4"
             >
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. In unde
-              et vel at quis deserunt voluptatem commodi officiis quos nesciunt,
-              quam tempora perferendis rem dolores alias harum recusandae
-              aliquam natus?
+            Backed by large companies and funded by institutional investors, we are
+            committed to the long-term success of our community.
             </p>
           </div>
         </div>
